@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml-stylesheet type="text/xsl" href="http://www.bulma.xyz/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://www.bulma.xyz/post/js/interview-2/</loc>
+    <lastmod>2018-03-31T15:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/post/js/interview-1/</loc>
+    <lastmod>2018-03-31T07:50:49+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/post/js/learn-nextjs/</loc>
+    <lastmod>2018-02-28T13:14:25+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/post/js/why-pnpm/</loc>
+    <lastmod>2018-02-08T15:30:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/post/js/npx-introduction/</loc>
+    <lastmod>2017-12-27T15:14:25+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/post/other/hugo-bugs-collection/</loc>
+    <lastmod>2017-12-20T15:45:53+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/post/js/setstate-synthetic-event-warning/</loc>
+    <lastmod>2017-12-25T16:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/post/other/start-hugo/</loc>
+    <lastmod>2017-12-17T00:38:53+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/post/js/service-worker-1/</loc>
+    <lastmod>2017-11-06T22:09:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/post/python/reset-django-migration/</loc>
+    <lastmod>2017-10-17T19:05:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/post/python/django-docker-compose/</loc>
+    <lastmod>2017-07-18T22:09:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/post/shell/awk/</loc>
+    <lastmod>2015-12-14T11:18:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/post/shell/sed/</loc>
+    <lastmod>2015-12-14T11:18:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/post/shell/tr/</loc>
+    <lastmod>2015-12-14T11:18:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/</loc>
+    <lastmod>2018-03-31T15:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/categories/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/tags/django/</loc>
+    <lastmod>2017-10-17T19:05:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/categories/django/</loc>
+    <lastmod>2017-10-17T19:05:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/tags/docker/</loc>
+    <lastmod>2017-07-18T22:09:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/categories/docker/</loc>
+    <lastmod>2017-07-18T22:09:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/tags/hugo/</loc>
+    <lastmod>2017-12-20T15:45:53+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/tags/javascript/</loc>
+    <lastmod>2018-03-31T15:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/categories/javascript/</loc>
+    <lastmod>2018-03-31T15:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/tags/linux/</loc>
+    <lastmod>2015-12-14T11:18:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/tags/npm/</loc>
+    <lastmod>2018-02-08T15:30:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/categories/npm/</loc>
+    <lastmod>2018-02-08T15:30:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/categories/other/</loc>
+    <lastmod>2017-12-20T15:45:53+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/post/</loc>
+    <lastmod>2018-03-31T15:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/tags/pwa/</loc>
+    <lastmod>2017-11-06T22:09:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/tags/python/</loc>
+    <lastmod>2017-10-17T19:05:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/tags/react/</loc>
+    <lastmod>2018-02-28T13:14:25+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/categories/react/</loc>
+    <lastmod>2018-02-28T13:14:25+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/tags/shell/</loc>
+    <lastmod>2015-12-14T11:18:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/categories/shell/</loc>
+    <lastmod>2015-12-14T11:18:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bulma.xyz/tags/</loc>
+    <lastmod>2017-10-17T19:05:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

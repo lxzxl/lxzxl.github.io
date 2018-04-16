@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Npm on Blog of lxzxl</title>
+    <link>http://www.bulma.xyz/categories/npm/</link>
+    <description>Recent content in Npm on Blog of lxzxl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 08 Feb 2018 15:30:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.bulma.xyz/categories/npm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>为什么我们应该使用 pnpm（译）</title>
+      <link>http://www.bulma.xyz/post/js/why-pnpm/</link>
+      <pubDate>Thu, 08 Feb 2018 15:30:00 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/js/why-pnpm/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/pnpm/pnpm&#34;&gt;pnpm&lt;/a&gt; 是又一个 Node.js 包管理工具。它可以替换 npm， 而且 npm 更快更高效。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>npx命令介绍</title>
+      <link>http://www.bulma.xyz/post/js/npx-introduction/</link>
+      <pubDate>Wed, 27 Dec 2017 15:14:25 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/js/npx-introduction/</guid>
+      <description>什么是npx 第一次看到npx命令是在 babel 的文档里 Note: If you do not have a package.json, create one before installing. This will ensure proper interaction with the npx command. 在自己的机器上试了下，真的有这个命令，于是去查了下 npm</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pwa on Blog of lxzxl</title>
+    <link>http://www.bulma.xyz/tags/pwa/</link>
+    <description>Recent content in Pwa on Blog of lxzxl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 06 Nov 2017 22:09:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.bulma.xyz/tags/pwa/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>用Service Worker实现离线应用</title>
+      <link>http://www.bulma.xyz/post/js/service-worker-1/</link>
+      <pubDate>Mon, 06 Nov 2017 22:09:00 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/js/service-worker-1/</guid>
+      <description>&lt;p&gt;开始有兴趣了解 Service Worker，是因为学习 react 时使用&lt;code&gt;create-react-app&lt;/code&gt;创建的应用，src 下面会有一个&lt;code&gt;registerServiceWorker.js&lt;/code&gt;文件。后来在了解 PWA 时也看到了它的身影。于是就打算写一篇笔记详细了解一下。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

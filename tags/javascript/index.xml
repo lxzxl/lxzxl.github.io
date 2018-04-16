@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on Blog of lxzxl</title>
+    <link>http://www.bulma.xyz/tags/javascript/</link>
+    <description>Recent content in Javascript on Blog of lxzxl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 31 Mar 2018 15:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.bulma.xyz/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>面试知识点总结 (2)</title>
+      <link>http://www.bulma.xyz/post/js/interview-2/</link>
+      <pubDate>Sat, 31 Mar 2018 15:00:00 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/js/interview-2/</guid>
+      <description>总结面试中常问的 JavaScript 知识点之 - 原型和继承 一切皆对象 原始类型: string, number, boolean, undefined, null js类型可分为两类：值类型和引用类型 值类型: string, number, boolean, undefined 引用类型: null, 对象, 数</description>
+    </item>
+    
+    <item>
+      <title>面试知识点总结 (1)</title>
+      <link>http://www.bulma.xyz/post/js/interview-1/</link>
+      <pubDate>Sat, 31 Mar 2018 07:50:49 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/js/interview-1/</guid>
+      <description>总结面试中常问的 JavaScript 知识点之 - 作用域和闭包 执行上下文 先看 3 个例子： console.log(a); // ReferenceError console.log(a); // undefined var a; console.log(a); // undefined var a = 10; console.log(f1); // function f1(){} function f1() {} console.log(f2); // undefined function f2() {} 解释： 一段 js 代码在真</description>
+    </item>
+    
+    <item>
+      <title>npx命令介绍</title>
+      <link>http://www.bulma.xyz/post/js/npx-introduction/</link>
+      <pubDate>Wed, 27 Dec 2017 15:14:25 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/js/npx-introduction/</guid>
+      <description>什么是npx 第一次看到npx命令是在 babel 的文档里 Note: If you do not have a package.json, create one before installing. This will ensure proper interaction with the npx command. 在自己的机器上试了下，真的有这个命令，于是去查了下 npm</description>
+    </item>
+    
+    <item>
+      <title>用Service Worker实现离线应用</title>
+      <link>http://www.bulma.xyz/post/js/service-worker-1/</link>
+      <pubDate>Mon, 06 Nov 2017 22:09:00 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/js/service-worker-1/</guid>
+      <description>&lt;p&gt;开始有兴趣了解 Service Worker，是因为学习 react 时使用&lt;code&gt;create-react-app&lt;/code&gt;创建的应用，src 下面会有一个&lt;code&gt;registerServiceWorker.js&lt;/code&gt;文件。后来在了解 PWA 时也看到了它的身影。于是就打算写一篇笔记详细了解一下。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

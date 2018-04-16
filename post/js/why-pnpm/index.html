@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>为什么我们应该使用 pnpm（译） - Blog of lxzxl</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="lxzxl" /><meta name="description" content="pnpm 是又一个 Node.js 的包管理工具。它可以替换 npm，而且 npm 更快更高效。" />
+<meta name="keywords" content="pnpm, pnpm, node.js" />
+
+
+
+
+<meta name="google-site-verification" content="LzNq4L1YIGXNL2b-6hIGt1VpUSGB9hctOiX8fyc7CUM" />
+
+
+<meta name="generator" content="Hugo 0.39-DEV" />
+
+
+<link rel="canonical" href="http://www.bulma.xyz/post/js/why-pnpm/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="为什么我们应该使用 pnpm（译）" />
+<meta property="og:description" content="pnpm 是又一个 Node.js 的包管理工具。它可以替换 npm，而且 npm 更快更高效。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.bulma.xyz/post/js/why-pnpm/" />
+
+
+
+<meta property="article:published_time" content="2018-02-08T15:30:00&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-02-08T15:30:00&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="为什么我们应该使用 pnpm（译）">
+<meta itemprop="description" content="pnpm 是又一个 Node.js 的包管理工具。它可以替换 npm，而且 npm 更快更高效。">
+
+
+<meta itemprop="datePublished" content="2018-02-08T15:30:00&#43;08:00" />
+<meta itemprop="dateModified" content="2018-02-08T15:30:00&#43;08:00" />
+<meta itemprop="wordCount" content="1714">
+
+
+
+<meta itemprop="keywords" content="npm," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="为什么我们应该使用 pnpm（译）"/>
+<meta name="twitter:description" content="pnpm 是又一个 Node.js 的包管理工具。它可以替换 npm，而且 npm 更快更高效。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">小小博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">小小博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">为什么我们应该使用 pnpm（译）</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-02-08 </span>
+        <div class="post-category">
+            
+              <a href="/categories/npm/"> npm </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#为什么不用-yarn">为什么不用 <strong><code>Yarn</code></strong></a></li>
+<li><a href="#这怎么可能">这怎么可能？</a></li>
+<li><a href="#你相信吗">你相信吗？</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p><a href="https://github.com/pnpm/pnpm">pnpm</a> 是又一个 Node.js 包管理工具。它可以替换 npm， 而且 npm 更快更高效。</p>
+
+<p></p>
+
+<p>能有多快? <em>3 倍！</em> 可以在<a href="https://github.com/pnpm/node-package-manager-benchmark">这里</a>查看 benchmarks 。</p>
+
+<p>为什么更高效？ 当你安装一个软件包，我们把它保存在你的机器上的一个全局存储目录中，然后我们创建一个硬链接而不是复制。 对于模块的每个版本，只会有一个副本保存在磁盘上。 例如，当使用 npm 或 yarn 时，如果有 100 个使用 lodash 的项目，你的磁盘上就会有有 100 份 lodash 的拷贝。pnpm 能帮助您节省千兆字节的磁盘空间！</p>
+
+<h2 id="为什么不用-yarn">为什么不用 <strong><code>Yarn</code></strong></h2>
+
+<p>老实说，当 <code>Yarn</code> 开始公开时，我真的很失望。 几个月来我一直在为 <code>pnpm</code> 作出重大贡献，而且没有任何关于 Yarn 的消息。 有关其发展的信息是不公开的。</p>
+
+<p>几天之后，我意识到 Yarn 只是 npm 的一个小小的改进。 尽管它使得安装速度更快，并且具有一些不错的新功能，但是它使用了与 npm 相同的扁平 node_modules 结构（从版本 3 开始）。</p>
+
+<p>扁平化的依赖关系树带来了一系列的问题：</p>
+
+<ol>
+<li>模块可以访问他们不依赖的软件包</li>
+<li>扁平化依赖树的算法相当复杂</li>
+<li>一些软件包必须复制在一个项目的 node_modules 文件夹中</li>
+</ol>
+
+<p>此外，还有一些 Yarn 不打算解决的问题，如磁盘空间使用问题。 所以我决定继续把时间花在 pnpm 上，并取得了巨大的成功。 截至目前（2017 年 3 月），pnpm 具有 Yarn 超过 npm 的所有附加功能：</p>
+
+<ol>
+<li>** 安全 **。 像 Yarn 一样，pnpm 有一个特殊的文件，其中包含所有安装包的校验码，以在代码执行之前验证每个已安装包的完整性。</li>
+<li>** 离线模式 **。 pnpm 将所有下载的软件包 tar 包保存在本地镜像仓库中。 当一个包在本地可用时，它从不发出请求。 使用 &ndash;offline 参数，HTTP 请求可以被完全禁止。</li>
+<li>** 速度 **。 pnpm 不仅比 npm 快，而且比 Yarn 还要快。 它比 cold 和 hot 缓存 Yarn 都快。 Yarn 从缓存拷贝文件，而 pnpm 只是从全局存储目录链接它们。</li>
+</ol>
+
+<h2 id="这怎么可能">这怎么可能？</h2>
+
+<p>正如我前面提到的，pnpm 不会拍平依赖关系树。 因此，pnpm 使用的算法可以更容易！ 这就是为什么只有一名开发人员能够跟上 Yarn 的几十位贡献者的步伐。</p>
+
+<p>那么，如果不依靠拍平的方式，pnpm 如何构造 node_modules 目录呢？ 为了理解它，我们应该回忆在 npm 版本 3 之前 node_modules 文件夹看起来是怎样的。在 npm@3 之前，node_modules 结构是可预测和干净的，因为 node_modules 中的每个依赖项都有自己的 node_modules 以及所包含依赖关系的 package.json 文件。</p>
+
+<pre><code class="language-shell">node_modules
+└─ foo
+   ├─ index.js
+   ├─ package.json
+   └─ node_modules
+      └─ bar
+         ├─ index.js
+         └─ package.json
+</code></pre>
+
+<p>这种方法有两个严重的问题：</p>
+
+<ul>
+<li>频繁使用的代码包创建了太深的依赖关系树，导致 Windows 上很长的目录路径问题</li>
+<li>当被不同的依赖关系需要时，代码包会被复制粘贴多次</li>
+</ul>
+
+<p>为了解决这些问题，npm 重新思考了 node_modules 结构，并提出了扁平化。 在 npm@3 中，node_modules 的结构现在看起来像这样：</p>
+
+<pre><code class="language-Shell">node_modules
+├─ foo
+|  ├─ index.js
+|  └─ package.json
+└─ bar
+   ├─ index.js
+   └─ package.json
+</code></pre>
+
+<p>有关 npm v3 依赖关系解析的更多信息，请参见 <a href="https://docs.npmjs.com/how-npm-works/npm3">npm v3 依赖关系解析</a>。</p>
+
+<p>与 npm@3 不同，pnpm 试图解决 npm@2 所具有的问题，而不是将依赖关系树展平。 在由 pnpm 创建的 node_modules 文件夹中，所有的软件包都有自己的依赖关系，但是目录树永远不会像 npm@2 那么深。 pnpm 保持所有依赖关系平坦，但使用符号链接将它们组合在一起。</p>
+
+<pre><code class="language-shell">-&gt; - a symlink (or junction on Windows)
+
+node_modules
+├─ foo -&gt; .registry.npmjs.org/foo/1.0.0/node_modules/foo
+└─ .registry.npmjs.org
+   ├─ foo/1.0.0/node_modules
+   |  ├─ bar -&gt; ../../bar/2.0.0/node_modules/bar
+   |  └─ foo
+   |     ├─ index.js
+   |     └─ package.json
+   └─ bar/2.0.0/node_modules
+      └─ bar
+         ├─ index.js
+         └─ package.json
+</code></pre>
+
+<p>要查看实例，请访问 <a href="https://github.com/pnpm/sample-project">示例 pnpm 项目</a>。</p>
+
+<p>虽然这个例子对于一个小项目似乎太复杂了，但是对于更大的项目来说，结构看起来比 npm / yarn 创建的结构要好。 让我们看看为什么它不错。</p>
+
+<p>首先，您可能已经注意到，node_modules 根目录下的包只是一个符号链接。 这很好，因为 Node.js 忽略符号链接并执行实际路径。 所以 require（&rsquo;foo&rsquo;）会执行文件 <code>node_modules/.registry.npmjs.org/foo/1.0.0/node_modules/foo/index.js</code> 而不是 <code>node_modules/foo/index.js</code>。</p>
+
+<p>其次，没有一个安装的软件包在其目录中有自己的 node_modules 文件夹。 那么 <code>foo</code> 怎么引入 <code>bar</code>？ 让我们看看包含 <code>foo</code> 包的文件夹：</p>
+
+<pre><code class="language-shell">node_modules/.registry.npmjs.org/foo/1.0.0/node_modules
+├─ bar -&gt; ../../bar/2.0.0/node_modules/bar
+└─ foo
+   ├─ index.js
+   └─ package.json
+</code></pre>
+
+<p>如您所看到的</p>
+
+<ol>
+<li><code>foo</code> 的依赖关系（只有 <code>bar</code>）被安装，但在目录结构中的一级。</li>
+<li>这两个软件包都位于名为 node_modules 的文件夹内。</li>
+</ol>
+
+<p><code>foo</code> 可以引入 <code>bar</code>，因为 Node.js 在目录结构中查找模块直到磁盘的根目录。 而且 <code>foo</code> 也可以引入 <code>foo</code>，因为它在一个名为 node_modules 的文件夹中（没错，这正是一些软件包所做的）。</p>
+
+<h2 id="你相信吗">你相信吗？</h2>
+
+<p>只需通过 npm 安装 pnpm：npm install -g pnpm。 只要你想安装一些东西，就用它来代替 npm：pnpm i foo。</p>
+
+<p>您也可以在 <a href="https://github.com/pnpm/pnpm">pnpm GitHub repo</a> 或 <a href="https://pnpm.js.org/">pnpm.js.org</a> 中阅读更多信息。 您可以关注 <a href="https://twitter.com/pnpmjs">pnpm on Twitter</a>，或者在 <a href="https://gitter.im/pnpm/pnpm">pnpm Gitter Chat Room</a> 寻求帮助。</p>
+
+<hr />
+
+<p>原文：<a href="https://www.kochan.io/nodejs/why-should-we-use-pnpm.html">Why should we use pnpm?</a></p>
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">lxzxl</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-02-08</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/npm/">npm</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/js/learn-nextjs/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">学习 next.js</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/js/npx-introduction/">
+            <span class="next-text nav-default">npx命令介绍</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/lxzxl" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="http://www.bulma.xyz/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">lxzxl</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

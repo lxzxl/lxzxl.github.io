@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>sed笔记 - Blog of lxzxl</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="lxzxl" /><meta name="description" content="sed命令学习笔记" />
+<meta name="keywords" content="shell, linux, sed" />
+
+
+
+
+<meta name="google-site-verification" content="LzNq4L1YIGXNL2b-6hIGt1VpUSGB9hctOiX8fyc7CUM" />
+
+
+<meta name="generator" content="Hugo 0.39-DEV" />
+
+
+<link rel="canonical" href="http://www.bulma.xyz/post/shell/sed/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="sed笔记" />
+<meta property="og:description" content="sed命令学习笔记" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.bulma.xyz/post/shell/sed/" />
+
+
+
+<meta property="article:published_time" content="2015-12-14T11:18:15&#43;08:00"/>
+
+<meta property="article:modified_time" content="2015-12-14T11:18:15&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="sed笔记">
+<meta itemprop="description" content="sed命令学习笔记">
+
+
+<meta itemprop="datePublished" content="2015-12-14T11:18:15&#43;08:00" />
+<meta itemprop="dateModified" content="2015-12-14T11:18:15&#43;08:00" />
+<meta itemprop="wordCount" content="1521">
+
+
+
+<meta itemprop="keywords" content="shell,linux," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="sed笔记"/>
+<meta name="twitter:description" content="sed命令学习笔记"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">小小博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">小小博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">sed笔记</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-12-14 </span>
+        <div class="post-category">
+            
+              <a href="/categories/shell/"> shell </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#sed-选项">sed 选项：</a></li>
+<li><a href="#sed-命令">sed 命令:</a></li>
+<li><a href="#替换标志">替换标志：</a></li>
+<li><a href="#打印-p-命令">打印：p 命令</a></li>
+<li><a href="#删除-d-命令">删除：d 命令</a></li>
+<li><a href="#替换-s-命令">替换：s 命令</a></li>
+<li><a href="#指定行的范围-逗号">指定行的范围：逗号</a></li>
+<li><a href="#多重编辑-e">多重编辑：-e</a></li>
+<li><a href="#读文件-r-命令">读文件：r 命令</a></li>
+<li><a href="#写文件-w-命令">写文件：w 命令</a></li>
+<li><a href="#追加-a-命令">追加：a 命令</a></li>
+<li><a href="#插入-i-命令">插入：i 命令</a></li>
+<li><a href="#修改-c-命令">修改：c 命令</a></li>
+<li><a href="#读取下一行-n-命令">读取下一行：n 命令</a></li>
+<li><a href="#花括号的作用">花括号的作用：{}</a></li>
+<li><a href="#转换-y-命令">转换：y 命令</a></li>
+<li><a href="#退出-q-命令">退出：q 命令</a></li>
+<li><a href="#暂存和取用-h-h-g-g">暂存和取用：h H g G</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <pre><code class="language-bash">sed [选项] [sed命令] 输入文件
+sed [选项] [-f sed脚本文件] 输入文件
+</code></pre>
+
+<p></p>
+
+<h2 id="sed-选项">sed 选项：</h2>
+
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>-i</td>
+<td>直接作用源文件，源文件将被修改。</td>
+</tr>
+
+<tr>
+<td>-f</td>
+<td>指定 sed 脚本文件</td>
+</tr>
+
+<tr>
+<td>-n</td>
+<td>没有的话会每行都打印出来,遇到匹配行会再打印一边.加上该选项,会只打印匹配行.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="sed-命令">sed 命令:</h2>
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>a|在当前行后添加一行或多行</td>
+<td></td>
+</tr>
+
+<tr>
+<td>c|用新文本替换当前行中的文本</td>
+<td></td>
+</tr>
+
+<tr>
+<td>d</td>
+<td>删除行</td>
+</tr>
+
+<tr>
+<td>i|在当前行之前插入文本</td>
+<td></td>
+</tr>
+
+<tr>
+<td>h</td>
+<td>把模式空间的内容复制到暂存缓冲区</td>
+</tr>
+
+<tr>
+<td>H</td>
+<td>把模式空间的内容添加到缓冲区</td>
+</tr>
+
+<tr>
+<td>g</td>
+<td>取出暂存缓冲区的内容，将其复制到模式缓冲区</td>
+</tr>
+
+<tr>
+<td>G</td>
+<td>取出暂存缓冲区的内容，将其追加到模式缓冲区</td>
+</tr>
+
+<tr>
+<td>l</td>
+<td>列出非打印字符</td>
+</tr>
+
+<tr>
+<td>p</td>
+<td>打印行</td>
+</tr>
+
+<tr>
+<td>n</td>
+<td>读入下一行输入，并从下一条而不是第一条命令对其处理</td>
+</tr>
+
+<tr>
+<td>q</td>
+<td>结束或退出 sed</td>
+</tr>
+
+<tr>
+<td>r</td>
+<td>从文件中读取输入行</td>
+</tr>
+
+<tr>
+<td>!</td>
+<td>对所选行以外的行应用所有命令</td>
+</tr>
+
+<tr>
+<td>s</td>
+<td>用一个字符串替换另外一个字符串</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="替换标志">替换标志：</h2>
+
+<table>
+<thead>
+<tr>
+<th>标志</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>g</td>
+<td>在行内进行全局替换</td>
+</tr>
+
+<tr>
+<td>p</td>
+<td>打印行</td>
+</tr>
+
+<tr>
+<td>w</td>
+<td>将行写入文件</td>
+</tr>
+
+<tr>
+<td>x</td>
+<td>交换暂存缓冲区和模式空间的内容</td>
+</tr>
+
+<tr>
+<td>y</td>
+<td>将字符转换成另外一个字符</td>
+</tr>
+
+<tr>
+<td>$</td>
+<td>表示最后一行</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="打印-p-命令">打印：p 命令</h2>
+
+<p><code>sed '/abc/p' file</code>：打印 file 中包含 abc 的行。默认情况 sed 把所有行都打印到屏幕，如果某行匹配到模式，则把该行另外再打印一遍
+<code>sed -n '/abc/p' file</code>：和上面一样，只是去掉了 sed 的默认行为，只会打印匹配的行</p>
+
+<h2 id="删除-d-命令">删除：d 命令</h2>
+
+<p><code>sed '3,$d' file</code>：删除从第 3 行到最后一行的内容。
+<code>sed '$d' file</code>：删除最后一行的内容
+<code>sed '/abc/d'</code>：删除包含 abc 的行。
+<code>sed '3d' file</code>：删除第三行的内容</p>
+
+<h2 id="替换-s-命令">替换：s 命令</h2>
+
+<p><code>sed 's/abc/def/g' file</code>:把行内的所有 abc 替换成 def，如果没有 g,则只替换行内的第一个 abc
+<code>sed -n 's/abc/def/p' file</code>:只打印发生替换的那些行
+<code>sed 's/abc/&amp;def/' file</code>:在所有的 abc 后面添加 def（&amp;表示匹配的内容）
+<code>sed -n 's/abc/def/gp' file</code>:把所有的 abc 替换成 def，并打印发生替换的那些行
+`sed &rsquo;s#abc#def#g&rsquo; file 把所有的 abc 替换成 def，跟在替换 s 后面的字符就是查找串和替换串之间的分割字符，本例中试是#</p>
+
+<h2 id="指定行的范围-逗号">指定行的范围：逗号</h2>
+
+<p><code>sed -n '/abc/,/def/p' file</code>:打印模式 abc 到 def 的行
+<code>sed -n '5/,/def/p' file</code>:打印从第五行到包含 def 行之间的行。
+<code>sed /abd/,/def/s/aaa/bbb/g file</code>:修改从模式 abc 到模式 def 之间的行，把 aaa 替换成 def</p>
+
+<h2 id="多重编辑-e">多重编辑：-e</h2>
+
+<p><code>sed -n -e '1,3d' -e 's/abc/def/g' file</code>:删除 1-3 行，然后把其余行的 abc 替换成 def</p>
+
+<h2 id="读文件-r-命令">读文件：r 命令</h2>
+
+<p><code>sed '/abc/r newfile' file</code>:在包含 abc 的行后读入 newfile 的内容</p>
+
+<h2 id="写文件-w-命令">写文件：w 命令</h2>
+
+<p><code>sed '/abc/w newfile' file</code>:在包含 abc 的行写入(保存到)newfile</p>
+
+<h2 id="追加-a-命令">追加：a 命令</h2>
+
+<p><code>sed '/abc/a\def' file</code>:在包含 abc 的行后新起一行，写入&rsquo;def&rsquo;</p>
+
+<h2 id="插入-i-命令">插入：i 命令</h2>
+
+<p><code>sed '/abc/i\def' file</code>:在包含 abc 的行前新起一行，写入&rsquo;def&rsquo;</p>
+
+<h2 id="修改-c-命令">修改：c 命令</h2>
+
+<p><code>sed '/abc/c\def' file</code>:在包含 abc 的行替换成&rsquo;def&rsquo;，旧文本被覆盖</p>
+
+<h2 id="读取下一行-n-命令">读取下一行：n 命令</h2>
+
+<p><code>sed '/abc/{n ; s/aaa/bbb/g;}' file</code>:读取包含 abc 的行的下一行，替换 aaa 为 bbb</p>
+
+<h2 id="花括号的作用">花括号的作用：{}</h2>
+
+<p>花括号{}中可以放入多个命令，每个命令后面要用分号&rdquo;;&rdquo;</p>
+
+<h2 id="转换-y-命令">转换：y 命令</h2>
+
+<p><code>sed 'y/abc/ABC/' file</code>:将 a 替换成 A，b 替换成 B，c 替换成 C（正则表达式元字符不起作用）</p>
+
+<h2 id="退出-q-命令">退出：q 命令</h2>
+
+<p><code>sed '/abc/{ s/aaa/bbb/ ;q; }' file</code>:在某行包含了 abc，把 aaa 替换成 bbb，然后退出 sed，只处理该行。</p>
+
+<h2 id="暂存和取用-h-h-g-g">暂存和取用：h H g G</h2>
+
+<p>sed 有两个缓冲区，所有命令都工作在 Pattern 区上，其中保留着 sed 刚读入的行。另外一个 Hold 区就是用来临时存放 Pattern 区数据的。在把 Pattern 区上的数据放入 Hold 区之前，Hold 区为空行。
+<strong>G</strong> 将一个换行和 Hold 区中的数据追加到 Pattern 区中数据之后
+<strong>g</strong> 将 Hold 区的数据覆盖到 Pattern 区中，Pattern 区中源数据全丢弃
+<strong>H</strong> 将一个换行符和 Pattern 区中的数据追加到 Hold 区数据之后
+<strong>h</strong> 将 Pattern 区中的数据覆盖到 Hold 区，Hold 区中的源数据全丢弃
+<strong>x</strong> 交换 Pattern 区和 Hold 区中的数据
+<code>sed -e '/abc/h' -e '$G' file</code>:包含 abc 的行通过 h 命令保存到暂存缓冲区，在第二条命令汇中，sed 读到最后一行$时，G 命令从暂存缓冲区中读取一行，追加到模式缓冲区的后面。即所有包含 abc 的行的最后一行被复制到文件末尾。</p>
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">lxzxl</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2015-12-14</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/shell/">shell</a>
+          
+          <a href="/tags/linux/">linux</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/shell/awk/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">awk笔记</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/shell/tr/">
+            <span class="next-text nav-default">tr笔记</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/lxzxl" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="http://www.bulma.xyz/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">lxzxl</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

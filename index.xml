@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog of lxzxl</title>
+    <link>http://www.bulma.xyz/</link>
+    <description>Recent content on Blog of lxzxl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 31 Mar 2018 15:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.bulma.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>面试知识点总结 (2)</title>
+      <link>http://www.bulma.xyz/post/js/interview-2/</link>
+      <pubDate>Sat, 31 Mar 2018 15:00:00 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/js/interview-2/</guid>
+      <description>总结面试中常问的 JavaScript 知识点之 - 原型和继承 一切皆对象 原始类型: string, number, boolean, undefined, null js类型可分为两类：值类型和引用类型 值类型: string, number, boolean, undefined 引用类型: null, 对象, 数</description>
+    </item>
+    
+    <item>
+      <title>面试知识点总结 (1)</title>
+      <link>http://www.bulma.xyz/post/js/interview-1/</link>
+      <pubDate>Sat, 31 Mar 2018 07:50:49 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/js/interview-1/</guid>
+      <description>总结面试中常问的 JavaScript 知识点之 - 作用域和闭包 执行上下文 先看 3 个例子： console.log(a); // ReferenceError console.log(a); // undefined var a; console.log(a); // undefined var a = 10; console.log(f1); // function f1(){} function f1() {} console.log(f2); // undefined function f2() {} 解释： 一段 js 代码在真</description>
+    </item>
+    
+    <item>
+      <title>学习 next.js</title>
+      <link>http://www.bulma.xyz/post/js/learn-nextjs/</link>
+      <pubDate>Wed, 28 Feb 2018 13:14:25 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/js/learn-nextjs/</guid>
+      <description>next.js next.js 是一个基于 React 的通用 JavaScript 框架，next.js 为 React 组件模型提供了扩展，支持基于服务器的组件渲染 (SSR)，同时也支持在客户端继续进行渲染。 本文</description>
+    </item>
+    
+    <item>
+      <title>为什么我们应该使用 pnpm（译）</title>
+      <link>http://www.bulma.xyz/post/js/why-pnpm/</link>
+      <pubDate>Thu, 08 Feb 2018 15:30:00 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/js/why-pnpm/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/pnpm/pnpm&#34;&gt;pnpm&lt;/a&gt; 是又一个 Node.js 包管理工具。它可以替换 npm， 而且 npm 更快更高效。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>npx命令介绍</title>
+      <link>http://www.bulma.xyz/post/js/npx-introduction/</link>
+      <pubDate>Wed, 27 Dec 2017 15:14:25 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/js/npx-introduction/</guid>
+      <description>什么是npx 第一次看到npx命令是在 babel 的文档里 Note: If you do not have a package.json, create one before installing. This will ensure proper interaction with the npx command. 在自己的机器上试了下，真的有这个命令，于是去查了下 npm</description>
+    </item>
+    
+    <item>
+      <title>使用Hugo遇到的坑</title>
+      <link>http://www.bulma.xyz/post/other/hugo-bugs-collection/</link>
+      <pubDate>Wed, 20 Dec 2017 15:07:53 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/other/hugo-bugs-collection/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.bulma.xyz/post/other/start-hugo/&#34;&gt;上一篇&lt;/a&gt;介绍了 Hugo 入门，但实际使用中还是遇到不少坑，统一搜集在这边文章里帮助其他童鞋少掉头发。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>setState的一个Synthetic Event Warning</title>
+      <link>http://www.bulma.xyz/post/js/setstate-synthetic-event-warning/</link>
+      <pubDate>Sun, 17 Dec 2017 23:01:47 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/js/setstate-synthetic-event-warning/</guid>
+      <description>&lt;p&gt;今天使用 React 时遇到一个警告：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.bulma.xyz/images/react/setstate-warning.png&#34; alt=&#34;clipboard.png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 Hugo 搭建博客</title>
+      <link>http://www.bulma.xyz/post/other/start-hugo/</link>
+      <pubDate>Sun, 17 Dec 2017 00:07:53 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/other/start-hugo/</guid>
+      <description>&lt;p&gt;以前写的一些文章笔记都托管在简书和 Segmenfault 上，但由于简书内容越来越垃圾，一直都打算转移到 github pages 上，但由于个人原因拖到现在。最近刚好有些时间，比较了一些静态博客生成工具，最后选择用 Hugo 来生成和管理自己的博客。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>用Service Worker实现离线应用</title>
+      <link>http://www.bulma.xyz/post/js/service-worker-1/</link>
+      <pubDate>Mon, 06 Nov 2017 22:09:00 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/js/service-worker-1/</guid>
+      <description>&lt;p&gt;开始有兴趣了解 Service Worker，是因为学习 react 时使用&lt;code&gt;create-react-app&lt;/code&gt;创建的应用，src 下面会有一个&lt;code&gt;registerServiceWorker.js&lt;/code&gt;文件。后来在了解 PWA 时也看到了它的身影。于是就打算写一篇笔记详细了解一下。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>重置Django migration的常见方式</title>
+      <link>http://www.bulma.xyz/post/python/reset-django-migration/</link>
+      <pubDate>Tue, 17 Oct 2017 19:05:35 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/python/reset-django-migration/</guid>
+      <description>&lt;p&gt;根据 django 官方文档建议，开发过程中会把生成的 migrations 提交到 git 中。由于各种原因，会有一些场景需要重置 migrations，故总结一些常用场景及解决办法。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Docker Compose部署Django和Vue.js应用</title>
+      <link>http://www.bulma.xyz/post/python/django-docker-compose/</link>
+      <pubDate>Tue, 18 Jul 2017 22:09:00 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/python/django-docker-compose/</guid>
+      <description>&lt;p&gt;本文主要内容关于使用 &lt;code&gt;docker-compose&lt;/code&gt; 实践部署后端 &lt;code&gt;django-rest-framework&lt;/code&gt; 和前端 &lt;code&gt;vue.js&lt;/code&gt; 应用。记录其中遇到的一些坑以及解决办法。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>awk笔记</title>
+      <link>http://www.bulma.xyz/post/shell/awk/</link>
+      <pubDate>Mon, 14 Dec 2015 11:18:15 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/shell/awk/</guid>
+      <description>&lt;p&gt;记录awk的一些常用命令及用法&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>sed笔记</title>
+      <link>http://www.bulma.xyz/post/shell/sed/</link>
+      <pubDate>Mon, 14 Dec 2015 11:18:15 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/shell/sed/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sed [选项] [sed命令] 输入文件
+sed [选项] [-f sed脚本文件] 输入文件
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>tr笔记</title>
+      <link>http://www.bulma.xyz/post/shell/tr/</link>
+      <pubDate>Mon, 14 Dec 2015 11:18:15 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/shell/tr/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;tr 用来从标准输入中通过替换或删除操作进行字符转换&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;tr -c -d -s [&amp;quot;string1_to_translate_from&amp;quot;][&amp;quot;string2_to_translate_to&amp;quot;] input_file
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

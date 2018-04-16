@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shell on Blog of lxzxl</title>
+    <link>http://www.bulma.xyz/tags/shell/</link>
+    <description>Recent content in Shell on Blog of lxzxl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 14 Dec 2015 11:18:15 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.bulma.xyz/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>awk笔记</title>
+      <link>http://www.bulma.xyz/post/shell/awk/</link>
+      <pubDate>Mon, 14 Dec 2015 11:18:15 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/shell/awk/</guid>
+      <description>&lt;p&gt;记录awk的一些常用命令及用法&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>sed笔记</title>
+      <link>http://www.bulma.xyz/post/shell/sed/</link>
+      <pubDate>Mon, 14 Dec 2015 11:18:15 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/shell/sed/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sed [选项] [sed命令] 输入文件
+sed [选项] [-f sed脚本文件] 输入文件
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>tr笔记</title>
+      <link>http://www.bulma.xyz/post/shell/tr/</link>
+      <pubDate>Mon, 14 Dec 2015 11:18:15 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/shell/tr/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;tr 用来从标准输入中通过替换或删除操作进行字符转换&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;tr -c -d -s [&amp;quot;string1_to_translate_from&amp;quot;][&amp;quot;string2_to_translate_to&amp;quot;] input_file
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

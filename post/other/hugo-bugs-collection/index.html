@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>使用Hugo遇到的坑 - Blog of lxzxl</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="lxzxl" /><meta name="description" content="使用Hugo遇到的坑搜集" />
+<meta name="keywords" content="hugo, bugs" />
+
+
+
+
+<meta name="google-site-verification" content="LzNq4L1YIGXNL2b-6hIGt1VpUSGB9hctOiX8fyc7CUM" />
+
+
+<meta name="generator" content="Hugo 0.39-DEV" />
+
+
+<link rel="canonical" href="http://www.bulma.xyz/post/other/hugo-bugs-collection/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="使用Hugo遇到的坑" />
+<meta property="og:description" content="使用Hugo遇到的坑搜集" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.bulma.xyz/post/other/hugo-bugs-collection/" />
+
+
+
+<meta property="article:published_time" content="2017-12-20T15:07:53&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-20T15:45:53&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="使用Hugo遇到的坑">
+<meta itemprop="description" content="使用Hugo遇到的坑搜集">
+
+
+<meta itemprop="datePublished" content="2017-12-20T15:07:53&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-20T15:07:53&#43;08:00" />
+<meta itemprop="wordCount" content="698">
+
+
+
+<meta itemprop="keywords" content="hugo," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用Hugo遇到的坑"/>
+<meta name="twitter:description" content="使用Hugo遇到的坑搜集"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">小小博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">小小博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">使用Hugo遇到的坑</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-20 </span>
+        <div class="post-category">
+            
+              <a href="/categories/other/"> Other </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#hugo-server-无法正确监测到文件变化">Hugo server 无法正确监测到文件变化</a></li>
+<li><a href="#嵌套列表中的代码块中的短横线识别错误">嵌套列表中的代码块中的短横线识别错误</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p><a href="/post/other/start-hugo/">上一篇</a>介绍了 Hugo 入门，但实际使用中还是遇到不少坑，统一搜集在这边文章里帮助其他童鞋少掉头发。</p>
+
+<p></p>
+
+<h1 id="hugo-server-无法正确监测到文件变化">Hugo server 无法正确监测到文件变化</h1>
+
+<p>本来用家里的电脑写文章时还是正常的，每次改动都能自动检测到，会触发重新编译。但之后用公司电脑就不行了，会出现下面图中的错误：</p>
+
+<p><img src="/images/hugo-bugs-collection/hugo-server-watch.jpg" alt="Hugo Server Error" /></p>
+
+<p><code>hugo server</code>竟然会监听到<code>.git</code>中的变化。即便我删掉我的 blog 目录重新 clone 下来，还是会有一样的问题。</p>
+
+<p>去 Hugo 的 Github Issues 里能找到一样的问题<a href="https://github.com/gohugoio/hugo/issues/3468">#3468</a>，但查看提交版本发现我的版本其实已经包含修复。</p>
+
+<pre><code class="language-bash">$ hugo version
+Hugo Static Site Generator v0.30.2 darwin/amd64 BuildDate: 2017-12-13T17:35:33+08:00
+</code></pre>
+
+<p>实在没有办法，我发现 0.31 有一堆大改动，我就尝试更新到最新版本，试了一下发现问题没有了。</p>
+
+<pre><code class="language-bash">$ brew upgrade hugo
+$ hugo version
+Hugo Static Site Generator v0.31.1 darwin/amd64 BuildDate: 2017-12-20T13:32:10+08:00
+</code></pre>
+
+<hr />
+
+<h1 id="嵌套列表中的代码块中的短横线识别错误">嵌套列表中的代码块中的短横线识别错误</h1>
+
+<p>我需要在某个列表下显示代码块，我在其他 markdown 编辑器（Typora）中是能正常显示，但 hugo 渲染的不是我想要的：</p>
+
+<pre><code class="language-markdown">1. item1
+
+    ```yaml
+    sudo: false
+    language: go
+    git:
+    depth: 1
+    install: go get -v github.com/gohugoio/hugo
+    scripts:
+    - build
+    - publish
+    ```
+
+2. item2
+</code></pre>
+
+<p>最后的效果见下图，代码块中的 YAML 数组，被错误的渲染成了 markdown 的列表，整个代码块都乱掉了。
+<img src="/images/hugo-bugs-collection/list-code-list.jpg" alt="List in Code in List" /></p>
+
+<p>我去hugo提了issue<a href="https://github.com/gohugoio/hugo/issues/4171">#4171</a>，但回复说不支持4个空格缩进和代码块同时使用 😭 。</p>
+
+<p>经过多次试验，发现了一些workaround：</p>
+
+<ul>
+<li><p>给代码块中的短横线前加缩进 - 4个空格。这个方法适合yaml，因为yaml对缩进的空格数量没有要求，对齐即可。这应该是最合适的方法。</p>
+
+<blockquote>
+<ol>
+<li><p>item1</p>
+
+<pre><code class="language-yaml">sudo: false
+scripts:
+    - build # 这里 - 前面有4个空格
+    - publish
+</code></pre></li>
+
+<li><p>item2</p></li>
+</ol>
+</blockquote></li>
+
+<li><p>额外加一层缩进，这种方法甚至不需要在加<code>```yaml</code>标记，因为无法识别，这也是缺点。</p>
+
+<blockquote>
+<ol>
+<li><p>item1</p>
+
+<pre><code>```yaml 
+sudo: false # 前面一共有8个空格
+scripts:
+  - build
+  - publish
+```
+</code></pre></li>
+
+<li><p>item2</p></li>
+</ol>
+</blockquote></li>
+
+<li><p>使用一个和短横线相似的符号暗度陈仓，但这不适合yaml代码，所以谨慎使用。<a href="https://github.com/gohugoio/hugo/issues/4171#issuecomment-352851263">来源</a></p>
+
+<blockquote>
+<ol>
+<li><p>item1</p>
+
+<pre><code class="language-yaml">sudo: false
+scripts:
+  ‐ build # 这里的‐不是markdown中的-
+  ‐ publish
+</code></pre></li>
+
+<li><p>item2</p></li>
+</ol>
+</blockquote></li>
+</ul>
+
+<hr />
+
+<p>（待搜集。。。）</p>
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">lxzxl</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-20</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/hugo/">hugo</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/js/npx-introduction/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">npx命令介绍</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/js/setstate-synthetic-event-warning/">
+            <span class="next-text nav-default">setState的一个Synthetic Event Warning</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/lxzxl" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="http://www.bulma.xyz/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">lxzxl</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

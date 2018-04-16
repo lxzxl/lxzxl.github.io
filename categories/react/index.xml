@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on Blog of lxzxl</title>
+    <link>http://www.bulma.xyz/categories/react/</link>
+    <description>Recent content in React on Blog of lxzxl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 28 Feb 2018 13:14:25 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.bulma.xyz/categories/react/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>学习 next.js</title>
+      <link>http://www.bulma.xyz/post/js/learn-nextjs/</link>
+      <pubDate>Wed, 28 Feb 2018 13:14:25 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/js/learn-nextjs/</guid>
+      <description>next.js next.js 是一个基于 React 的通用 JavaScript 框架，next.js 为 React 组件模型提供了扩展，支持基于服务器的组件渲染 (SSR)，同时也支持在客户端继续进行渲染。 本文</description>
+    </item>
+    
+    <item>
+      <title>setState的一个Synthetic Event Warning</title>
+      <link>http://www.bulma.xyz/post/js/setstate-synthetic-event-warning/</link>
+      <pubDate>Sun, 17 Dec 2017 23:01:47 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/js/setstate-synthetic-event-warning/</guid>
+      <description>&lt;p&gt;今天使用 React 时遇到一个警告：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.bulma.xyz/images/react/setstate-warning.png&#34; alt=&#34;clipboard.png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

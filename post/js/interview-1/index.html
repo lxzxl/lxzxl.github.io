@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>面试知识点总结 (1) - Blog of lxzxl</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="lxzxl" /><meta name="description" content="总结面试中常问的 JavaScript 知识点：关于作用域和闭包" />
+<meta name="keywords" content="面试, javascript, 作用域, 作用域链, 闭包" />
+
+
+
+
+<meta name="google-site-verification" content="LzNq4L1YIGXNL2b-6hIGt1VpUSGB9hctOiX8fyc7CUM" />
+
+
+<meta name="generator" content="Hugo 0.39-DEV" />
+
+
+<link rel="canonical" href="http://www.bulma.xyz/post/js/interview-1/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="面试知识点总结 (1)" />
+<meta property="og:description" content="总结面试中常问的 JavaScript 知识点：关于作用域和闭包" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.bulma.xyz/post/js/interview-1/" />
+
+
+
+<meta property="article:published_time" content="2018-03-31T07:50:49&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-03-31T07:50:49&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="面试知识点总结 (1)">
+<meta itemprop="description" content="总结面试中常问的 JavaScript 知识点：关于作用域和闭包">
+
+
+<meta itemprop="datePublished" content="2018-03-31T07:50:49&#43;08:00" />
+<meta itemprop="dateModified" content="2018-03-31T07:50:49&#43;08:00" />
+<meta itemprop="wordCount" content="1047">
+
+
+
+<meta itemprop="keywords" content="javascript," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="面试知识点总结 (1)"/>
+<meta name="twitter:description" content="总结面试中常问的 JavaScript 知识点：关于作用域和闭包"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">小小博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">小小博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">面试知识点总结 (1)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-03-31 </span>
+        <div class="post-category">
+            
+              <a href="/categories/javascript/"> javascript </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#执行上下文">执行上下文</a></li>
+<li><a href="#this">this</a></li>
+<li><a href="#作用域">作用域</a>
+<ul>
+<li><a href="#自由变量">自由变量</a></li>
+<li><a href="#作用域链">作用域链</a>
+<ul>
+<li><a href="#其他">其他</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#闭包">闭包</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>总结面试中常问的 JavaScript 知识点之 - 作用域和闭包</p>
+
+<h1 id="执行上下文">执行上下文</h1>
+
+<p>先看 3 个例子：</p>
+
+<pre><code class="language-javascript">console.log(a); // ReferenceError
+
+console.log(a); // undefined
+var a;
+
+console.log(a); // undefined
+var a = 10;
+
+console.log(f1); // function f1(){}
+function f1() {}
+
+console.log(f2); // undefined
+function f2() {}
+</code></pre>
+
+<p>解释：</p>
+
+<p>一段 js 代码在真正运行前会做一些准备工作:</p>
+
+<ul>
+<li>变量、函数表达式的声明，默认赋值为 undefined</li>
+<li>给 this 赋值</li>
+<li>函数声明</li>
+</ul>
+
+<p>这三种数据的准备工作就叫做 <strong>执行上下文</strong>，<strong>每次调用</strong> 函数都会生成 <strong>新的</strong> 执行上下文。</p>
+
+<p>如果代码段是 <strong>函数体</strong>，那么还要准备另外两种数据：</p>
+
+<ul>
+<li>arguments</li>
+<li>作用域</li>
+</ul>
+
+<h1 id="this">this</h1>
+
+<p><code>this</code> 是在函数真正被调用时确定的，函数定义时无法确定。</p>
+
+<ol>
+<li>使用 <code>new</code></li>
+</ol>
+
+<p>new 的原理是，创建一个空对象，将这个空对象当做 this。</p>
+
+<ol>
+<li>函数作为属性</li>
+</ol>
+
+<p>如果函数作为对象的一个属性时，并且作为对象的一个属性被调用时，函数中的 this 指向该对象。</p>
+
+<pre><code class="language-javascript">var obj = {
+  value: 123,
+  fn: function() {
+    console.log(this.value);
+  }
+};
+console.log(obj.fn()); // 10
+var fn = obj.fn;
+console.log(fn()); // undefined
+</code></pre>
+
+<ol>
+<li>用 call、apply 调用</li>
+</ol>
+
+<p>this 的值就取传入的对象的值</p>
+
+<pre><code class="language-javascript">var obj = {
+  value: 123
+};
+
+function fn() {
+  console.log(this.value);
+}
+fn(); // undefined
+fn.call(obj); // 123
+</code></pre>
+
+<ol>
+<li>全局 和 作为普通函数调用</li>
+</ol>
+
+<p>this 是 window</p>
+
+<pre><code class="language-javascript">var obj = {
+  value: 123,
+  fn: function() {
+    function f() {
+      console.log(this.value);
+    }
+    f();
+  }
+};
+
+obj.fn(); // undefined
+</code></pre>
+
+<h1 id="作用域">作用域</h1>
+
+<p>变量作用域</p>
+
+<blockquote>
+<p>程序中定义这个变量的区域，有全区变量和局部变量</p>
+</blockquote>
+
+<p>函数作用域</p>
+
+<blockquote>
+<p>js 中没有块级作用域，只有函数作用域</p>
+
+<p>函数内声明的所有变量在函数体内始终可见</p>
+
+<p><strong>静态作用域</strong> 又叫做词法作用域</p>
+</blockquote>
+
+<p>作用域的用处就是隔离变量，不同作用域下的同名变量不冲突。</p>
+
+<p>#作用域链</p>
+
+<h2 id="自由变量">自由变量</h2>
+
+<p>在 A 作用域中使用的变量 x，却没有在 A 作用域中声明，对于 A 作用域来说，x 就是一个自由变量。</p>
+
+<p>查找自由变量时，要到 <strong>创建这个函数的作用域中</strong> 取值。</p>
+
+<pre><code class="language-javascript">var x = 10;
+
+function fn() {
+  console.log(x);
+}
+
+function other(f) {
+  var x = 20;
+  f();
+}
+
+other(fn); // 10
+</code></pre>
+
+<h2 id="作用域链">作用域链</h2>
+
+<p>像上面说的去 <strong>创建这个函数的作用域中</strong> 查找，一直到全局作用域的查找路线，就是作用域链。</p>
+
+<p>每段 js 代码 (全局代码) 都有一个与之关联的作用域链，是一个列表或链表，包含了这个函数所有的可访问的变量。当 js 需要查找变量时，会从第一个对象开始找相同名字，找不到就去下一个找，知道最后抛出 ReferenceError。</p>
+
+<p>当定义一个函数时，因为函数也是对象，它会保存一个作用域链。从函数内部向外遍历，每当碰到一个 function 时，就将其对应的变量对象添加至作用域链中去，如此下去，直到 global 对象，然后将作用域链的引用赋给 <code>[[Scope]]</code> 属性</p>
+
+<p>当调用这个函数时，会创建一个新的对象存储它的局部变量，并将这个对象放在作用域链的前端。</p>
+
+<h3 id="其他">其他</h3>
+
+<p>全局变量存在于运行期上下文作用域链的最末端，查找最慢，所以我们应该尽可能少使用全局变量，如果使用，就先用局部变量缓存下来；</p>
+
+<p><code>with</code> 会在作用域链前端添加一个对象。</p>
+
+<h1 id="闭包">闭包</h1>
+
+<p>概念不好记，只需知道两种使用情况：</p>
+
+<ol>
+<li>函数作为返回值</li>
+</ol>
+
+<pre><code class="language-javascript">function func() {
+  var num = 100;
+  return function(input) {
+    if (num&gt; 100) {
+      console.log(input);
+    }
+  };
+}
+var check = func();
+check(300); // 300
+</code></pre>
+
+<ol>
+<li>函数作为参数被传递</li>
+</ol>
+
+<pre><code class="language-javascript">var name = 'global';
+function func() {
+  console.log(name);
+}
+
+(function fn(f) {
+  var name = 'fn';
+  f();
+})(func); // global
+</code></pre>
+
+<p>闭包常用来隔离变量，缓存。</p>
+
+<p>使用闭包会增加内存消耗。</p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">lxzxl</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-03-31</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/javascript/">javascript</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/js/interview-2/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">面试知识点总结 (2)</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/js/learn-nextjs/">
+            <span class="next-text nav-default">学习 next.js</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/lxzxl" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="http://www.bulma.xyz/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">lxzxl</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

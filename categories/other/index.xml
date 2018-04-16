@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Other on Blog of lxzxl</title>
+    <link>http://www.bulma.xyz/categories/other/</link>
+    <description>Recent content in Other on Blog of lxzxl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 20 Dec 2017 15:07:53 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.bulma.xyz/categories/other/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Hugo遇到的坑</title>
+      <link>http://www.bulma.xyz/post/other/hugo-bugs-collection/</link>
+      <pubDate>Wed, 20 Dec 2017 15:07:53 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/other/hugo-bugs-collection/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.bulma.xyz/post/other/start-hugo/&#34;&gt;上一篇&lt;/a&gt;介绍了 Hugo 入门，但实际使用中还是遇到不少坑，统一搜集在这边文章里帮助其他童鞋少掉头发。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 Hugo 搭建博客</title>
+      <link>http://www.bulma.xyz/post/other/start-hugo/</link>
+      <pubDate>Sun, 17 Dec 2017 00:07:53 +0800</pubDate>
+      
+      <guid>http://www.bulma.xyz/post/other/start-hugo/</guid>
+      <description>&lt;p&gt;以前写的一些文章笔记都托管在简书和 Segmenfault 上，但由于简书内容越来越垃圾，一直都打算转移到 github pages 上，但由于个人原因拖到现在。最近刚好有些时间，比较了一些静态博客生成工具，最后选择用 Hugo 来生成和管理自己的博客。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

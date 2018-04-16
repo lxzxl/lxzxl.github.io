@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>学习 next.js - Blog of lxzxl</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="lxzxl" /><meta name="description" content="使用next.js搭建一个简单的加密货币行情的网站" />
+<meta name="keywords" content="next.js, SSR, react" />
+
+
+
+
+<meta name="google-site-verification" content="LzNq4L1YIGXNL2b-6hIGt1VpUSGB9hctOiX8fyc7CUM" />
+
+
+<meta name="generator" content="Hugo 0.39-DEV" />
+
+
+<link rel="canonical" href="http://www.bulma.xyz/post/js/learn-nextjs/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="学习 next.js" />
+<meta property="og:description" content="使用next.js搭建一个简单的加密货币行情的网站" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.bulma.xyz/post/js/learn-nextjs/" />
+
+
+
+<meta property="article:published_time" content="2018-02-28T13:14:25&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-02-28T13:14:25&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="学习 next.js">
+<meta itemprop="description" content="使用next.js搭建一个简单的加密货币行情的网站">
+
+
+<meta itemprop="datePublished" content="2018-02-28T13:14:25&#43;08:00" />
+<meta itemprop="dateModified" content="2018-02-28T13:14:25&#43;08:00" />
+<meta itemprop="wordCount" content="1516">
+
+
+
+<meta itemprop="keywords" content="react," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="学习 next.js"/>
+<meta name="twitter:description" content="使用next.js搭建一个简单的加密货币行情的网站"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">小小博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">小小博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">学习 next.js</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-02-28 </span>
+        <div class="post-category">
+            
+              <a href="/categories/react/"> react </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#next-js">next.js</a>
+<ul>
+<li><a href="#准备">准备</a></li>
+<li><a href="#开始">开始</a>
+<ul>
+<li><a href="#启用-sass-支持">启用 sass 支持</a></li>
+<li><a href="#同构-api-请求库">同构 API 请求库</a></li>
+</ul></li>
+<li><a href="#实现页面">实现页面</a>
+<ul>
+<li><a href="#货币列表">货币列表</a></li>
+<li><a href="#货币历史">货币历史</a></li>
+</ul></li>
+<li><a href="#其他">其他</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="next-js">next.js</h1>
+
+<blockquote>
+<p>next.js 是一个基于 React 的通用 JavaScript 框架，next.js 为 React 组件模型提供了扩展，支持基于服务器的组件渲染 (SSR)，同时也支持在客户端继续进行渲染。</p>
+
+<p>本文通过实现一个热门加密货币行情的网站来学习 next.js。</p>
+</blockquote>
+
+<h2 id="准备">准备</h2>
+
+<p>官网 <a href="https://github.com/zeit/next.js">https://github.com/zeit/next.js</a></p>
+
+<p>入门教程 <a href="https://learnnextjs.com/">https://learnnextjs.com/</a></p>
+
+<p>本文代码运行环境:</p>
+
+<ul>
+<li>macOS High Sierra 10.13.3</li>
+<li>Node.js 8.9.4</li>
+</ul>
+
+<p>完整代码 <a href="https://github.com/lxzxl/crypto-compare">https://github.com/lxzxl/crypto-compare</a></p>
+
+<h2 id="开始">开始</h2>
+
+<p>使用 <a href="https://github.com/segmentio/create-next-app">create-next-app</a> 命令创建项目。</p>
+
+<pre><code class="language-shell">npm i -g create-next-app
+create-next-app crypto-compare
+cd crypto-compare
+npm run dev
+</code></pre>
+
+<p><img src="/images/learn-nextjs/npm-run-dev.png" alt="npm run dev" /></p>
+
+<p>项目结构：</p>
+
+<pre><code>crypto-compare/
+  README.md
+  package.json
+  next.config.js
+  components/
+    index.js
+    head.js
+    nav.js
+  pages/
+    index.js
+  static/
+    favicon.ico
+</code></pre>
+
+<h3 id="启用-sass-支持">启用 sass 支持</h3>
+
+<p>使用插件 <a href="https://github.com/zeit/next-plugins/tree/master/packages/next-sass">next-sass</a></p>
+
+<pre><code class="language-shell">npm i @zeit/next-sass node-sass
+</code></pre>
+
+<p>使用方法：</p>
+
+<p>样式文件最终会被编译到 <code>.next/static/style.css</code>。必须使用一个自定义的 <code>_document.js</code> 来引导这个样式文件。</p>
+
+<pre><code class="language-javascript">// ./pages/_document.js
+import Document, { Head, Main, NextScript } from 'next/document';
+
+export default class MyDocument extends Document {
+  render() {
+    return (
+      &lt;html&gt;
+        &lt;Head&gt;
+          &lt;link rel=&quot;stylesheet&quot; href=&quot;/_next/static/style.css&quot; /&gt;
+        &lt;/Head&gt;
+        &lt;body&gt;
+          &lt;Main /&gt;
+          &lt;NextScript /&gt;
+        &lt;/body&gt;
+      &lt;/html&gt;
+    );
+  }
+}
+</code></pre>
+
+<p>然后修改 <code>next.config.js</code> 让 next 或者说 webpack 支持 scss 文件：</p>
+
+<pre><code class="language-javascript">// next.config.js
+const withSass = require('@zeit/next-sass');
+module.exports = withSass({
+  webpack: config =&gt; {
+    // Fixes npm packages that depend on `fs` module
+    config.node = {
+      fs: 'empty'
+    };
+
+    return config;
+  }
+});
+</code></pre>
+
+<p>现在在我们的页面代码中直接引入需要的 scss 文件即可：</p>
+
+<pre><code class="language-Javascript">// components/layout.js
+import '../static/styles.scss';
+</code></pre>
+
+<p>本项目中我使用 bulma.css 最为基础 css 框架，所以需要在 styles.scss 中引入 bulma.css。</p>
+
+<pre><code class="language-scss">// static/styles.scss
+@import '~bulma/css/bulma.css';
+</code></pre>
+
+<h3 id="同构-api-请求库">同构 API 请求库</h3>
+
+<p>使用 <a href="https://github.com/axios/axios">axios</a>, 原因是 server 端和 client 端都支持。</p>
+
+<pre><code class="language-shell">npm i axios
+</code></pre>
+
+<h2 id="实现页面">实现页面</h2>
+
+<p>基本工作已经完成，接下来就要专注于功能实现上了。功能基本复制于 <a href="https://cn.investing.com/crypto/currencies。数据则来自">https://cn.investing.com/crypto/currencies。数据则来自</a> <a href="https://www.cryptocompare.com/api/">开源 API</a>。</p>
+
+<p>明确我们需求：</p>
+
+<ul>
+<li>首页 - 显示一个频繁更新的加密货币表格。</li>
+<li>详细页面 - 用户选择某个货币，显示该货币的价格历史。</li>
+</ul>
+
+<p>因为不止一个页面，我就先写了一个通用的基本布局组件 <code>components/layout.js</code>，其他页面的内容都是这个组件的 <code>props.children</code>。</p>
+
+<pre><code class="language-react">import '../static/styles.scss';
+import Head from './head';
+const Fragment = React.Fragment;
+const Layout = props =&gt; (
+  &lt;Fragment&gt;
+    &lt;Head {...props} /&gt;
+    &lt;section className=&quot;hero is-primary is-small&quot;&gt;
+      &lt;div className=&quot;hero-body&quot;&gt;
+        &lt;div className=&quot;container&quot;&gt;
+          &lt;h1 className=&quot;title&quot;&gt;Crypto Compare&lt;/h1&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section className=&quot;section content&quot;&gt;
+      &lt;div className=&quot;container&quot;&gt;{props.children}&lt;/div&gt;
+      &lt;style jsx&gt;{`
+        .content {
+          padding: 3rem 5%;
+        }
+      `}&lt;/style&gt;
+    &lt;/section&gt;
+  &lt;/Fragment&gt;
+);
+export default Layout;
+</code></pre>
+
+<h3 id="货币列表">货币列表</h3>
+
+<p>首页要显示一个各种货币的价格表。可以先来实现一个单独的货币列表的组件 <code>components/coinList.js</code>：</p>
+
+<pre><code class="language-react">const List = ({list}) =&gt; {
+  return (
+    &lt;table className=&quot;table is-hoverable is-fullwidth&quot;&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Name&lt;/td&gt;
+          &lt;td&gt;Symbol&lt;/td&gt;
+          &lt;td&gt;Price (USD)&lt;/td&gt;
+          &lt;td&gt;Market Cap&lt;/td&gt;
+          &lt;td&gt;Chg (24H)&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        {list.map(({USD}) =&gt; (
+          &lt;tr key={USD.FROMSYMBOL}&gt;
+            &lt;th&gt;{USD.FROMSYMBOL}&lt;/th&gt;
+            &lt;th&gt;{USD.FROMSYMBOL}&lt;/th&gt;
+            &lt;th&gt;{USD.PRICE}&lt;/th&gt;
+            &lt;th&gt;{USD.MKTCAP}&lt;/th&gt;
+            &lt;th&gt;{USD.CHANGE24HOUR}&lt;/th&gt;
+          &lt;/tr&gt;
+        ))}
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  );
+};
+</code></pre>
+
+<p>然后是首页页面：</p>
+
+<pre><code class="language-react">import axios from 'axios';
+import {array} from 'prop-types';
+import Layout from '../components/layout';
+import CoinList from '../components/coinList';
+
+const Index = ({coinList}) =&gt; (
+  &lt;Layout title=&quot;Home&quot;&gt;
+    &lt;CoinList list={coinList} /&gt;
+  &lt;/Layout&gt;
+);
+
+Index.propTypes = {
+  coinList: array
+};
+
+Index.getInitialProps = async ({req}) =&gt; {
+  const {data} = await axios.get('https://min-api.cryptocompare.com/data/pricemultifull', {
+    params: {
+      fsyms: 'BTC,ETH,XRP,BCH,LTC,ADA,NEO,XLM,EOS,DASH,IOT,XMR,XEM,ETC,TRX,VEN,LSK,QTUM,BTG,USDT',
+      tsyms: 'USD'
+    }
+  });
+  const displayData = data.DISPLAY;
+  return {
+    coinList: Object.keys(displayData).map(k =&gt; displayData[k])
+  };
+};
+
+export default Index;
+</code></pre>
+
+<p>最开始打算把 <code>getInitialProps</code> 方法放到 <code>coinList.js</code> 组件中，但文档说 getInitialProps 方法只会在 pages 目录下的文件中执行 (*Note: getInitialProps can *<em>not** be used in children components. Only in pages.</em>)</p>
+
+<p>这样，一个粗糙的首页就完成了</p>
+
+<p><img src="/images/learn-nextjs/home.png" alt="Home Page" /></p>
+
+<p>但这只是一个很简单的页面，没有定时自动更新数据的功能，接下来我们加上自动更新功能。</p>
+
+<p>因为有自动更新，所以这个页面就应该有自己的状态和生命周期，所以函数组件就不太合适了，需要使用有状态的组件。</p>
+
+<pre><code class="language-react">import axios from 'axios';
+import {Component} from 'react';
+import {array} from 'prop-types';
+import Layout from '../components/layout';
+import CoinList from '../components/coinList';
+
+class Index extends Component {
+  static async fetchData() {
+    const {data} = await axios.get('https://min-api.cryptocompare.com/data/pricemultifull', {
+      params: {
+        fsyms: 'BTC,ETH,XRP,BCH,LTC,ADA,NEO,XLM,EOS,DASH,IOT,XMR,XEM,ETC,TRX,VEN,LSK,QTUM,BTG,USDT',
+        tsyms: 'USD'
+      }
+    });
+    const displayData = data.DISPLAY;
+    return {
+      coinList: Object.keys(displayData).map(k =&gt; displayData[k])
+    };
+  }
+
+  static async getInitialProps({req}) {
+    return this.fetchData();
+  }
+  constructor(props) {
+    super(props);
+    this.state = {coinList: props.coinList};
+  }
+  componentDidMount() {
+    this.timerID = setInterval(async () =&gt; {
+      const newData = await this.constructor.fetchData();
+      this.setState(newData);
+    }, 10000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+  render() {
+    const {coinList} = this.state;
+    return &lt;Layout title=&quot;Home&quot;&gt;{coinList &amp;&amp; &lt;CoinList list={coinList} /&gt;}&lt;/Layout&gt;;
+  }
+}
+
+Index.propTypes = {
+  coinList: array
+};
+
+export default Index;
+</code></pre>
+
+<p>解释一下，我在 <code>componentDidMount</code> hook 中添加了一段每隔 10 秒拉取数据的代码。获得新数据后会 setState 更新组件。这样页面上的数据每隔 10 秒就会更新一次。查看网页源代码可以确认，确实是可以服务端渲染，没毛病。</p>
+
+<h3 id="货币历史">货币历史</h3>
+
+<p>首先我们要给历史页面一个入口链接，把价格单元格改为链接，并把选中的货币当作参数传给历史页面：</p>
+
+<pre><code class="language-react">import Link from 'next/link';
+
+...
+&lt;th&gt;
+  &lt;Link href={{ pathname: '/history', query: { symbol} }}&gt;
+    &lt;a&gt;{price.PRICE}&lt;/a&gt;
+  &lt;/Link&gt;
+&lt;/th&gt;
+...
+</code></pre>
+
+<p>然后在 <code>pages</code> 目录下添加 <code>history.js</code> 文件作为历史页面。因为需要显示不同时间段的价格曲线，所以做一个有状态的组件比较好：</p>
+
+<pre><code>class History extends React.PureComponent {
+  static async getInitialProps(ctx) {
+  	const {symbol} = ctx.query;
+  	return {history: await fetchCoinHistory(symbol)}
+  }
+  constructor(props) {
+    super(props);
+    this.state = {
+      history: props.history
+    };
+  }
+  render(){
+    &lt;Layout title=&quot;History&quot;&gt;
+    	&lt;CoinHistory data={history} /&gt;
+    &lt;/Layout&gt;
+  }
+}
+</code></pre>
+
+<p>同样，我们在 <code>getInitialProps</code> 中拿到当前货币，然后调用 API 获取历史价格，传递给 <code>CoinHistory</code> 组件渲染出来。图标是用 chart.js 画的，无须多说。</p>
+
+<p>最终的效果就是：</p>
+
+<p><img src="/images/learn-nextjs/history.png" alt="History Page" /></p>
+
+<p>为了能返回首页，可以把 H1 改为到首页的链接：</p>
+
+<pre><code class="language-react">&lt;h1 className=&quot;title&quot;&gt;
+  &lt;Link href={'/'}&gt;&lt;a&gt;Crypto Compare&lt;/a&gt;&lt;/Link&gt;
+&lt;/h1&gt;
+</code></pre>
+
+<h2 id="其他">其他</h2>
+
+<p>这样，一个基本的加密货币价格网站就可以使用的，如果有兴趣的话，可以加入一些其他功能，比如价格升降的不同样式，高亮有变化价格等等。。</p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">lxzxl</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-02-28</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/react/">react</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/js/interview-1/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">面试知识点总结 (1)</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/js/why-pnpm/">
+            <span class="next-text nav-default">为什么我们应该使用 pnpm（译）</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/lxzxl" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="http://www.bulma.xyz/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">lxzxl</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
