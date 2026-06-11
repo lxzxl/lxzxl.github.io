@@ -35,7 +35,7 @@ const homePath = getRelativeLocaleUrl(locale, "");
   >
     <section id="hero" class="border-border border-b pt-8 pb-6">
       <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Mingalaba
+        Hi, I'm Steven 👋
       </h1>
       <a
         target="_blank"
@@ -53,19 +53,25 @@ const homePath = getRelativeLocaleUrl(locale, "");
       </a>
 
       <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
+        Software engineer working across AI, platform engineering, and Web3.
+        I write up things worth sharing — security incidents I run into, notes on
+        infrastructure, and the occasional deep dive into how something actually
+        works.
       </p>
       <p class="mt-2">
-        Read the blog posts or check
+        Start with the
         <LinkButton
           class="hover:text-accent underline decoration-dashed underline-offset-4"
-          href="https://github.com/satnaing/astro-paper#readme"
+          href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}posts/`}
         >
-          README
-        </LinkButton> for more info.
+          posts
+        </LinkButton>, or read a bit
+        <LinkButton
+          class="hover:text-accent underline decoration-dashed underline-offset-4"
+          href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}about/`}
+        >
+          about me
+        </LinkButton>.
       </p>
       {
         socials.length > 0 && (
